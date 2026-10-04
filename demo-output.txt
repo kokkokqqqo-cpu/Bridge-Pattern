@@ -1,0 +1,8 @@
+T1 PASS | Circle + VectorRenderer | result=Vector render of Circle [ID=1] with radius 2.0
+T2 PASS | Circle + RasterRenderer | result=Raster render of Circle [ID=1] with radius 2.0
+T3 PASS | Square + VectorRenderer | result=Vector render of Square [ID=2] with side 3.0
+T4 PASS | Square + RasterRenderer | result=Raster render of Square [ID=2] with side 3.0
+T5 PASS sameObject=true | stateUnchanged=true | before=<Vector render of Circle [ID=10] with radius 2.0> | after=<Raster render of Circle [ID=10] with radius 2.0>
+T6 PASS | Circle + AsciiRenderer | result=ASCII render of Circle [ID=1] with radius 2.0
+T7 PASS | Square + AsciiRenderer | result=ASCII render of Square [ID=2] with side 3.0
+SUMMARY: 7/7 PASS
