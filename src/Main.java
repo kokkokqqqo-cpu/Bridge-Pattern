@@ -9,6 +9,7 @@ public class Main {
 
         Renderer vector = new VectorRenderer();
         Renderer raster = new RasterRenderer();
+        Renderer ascii = new AsciiRenderer();
 
         Circle circle1 = new Circle(1, 2.0, vector);
         String resT1 = circle1.execute();
@@ -55,6 +56,19 @@ public class Main {
         boolean passT5 = sameObject && stateUnchanged && correctExecution;
         if (passT5) passed++;
         System.out.println("T5 " + (passT5 ? "PASS" : "FAIL") + " sameObject=" + sameObject + " | stateUnchanged=" + stateUnchanged + " | before=<" + beforeResult + "> | after=<" + afterResult + ">");
+
+        Circle circle3 = new Circle(1, 2.0, ascii);
+        String resT6 = circle3.execute();
+        boolean passT6 = resT6.equals("ASCII render of Circle [ID=1] with radius 2.0");
+        if (passT6) passed++;
+        printResult("T6", passT6, "Circle + AsciiRenderer", resT6, "ASCII render of Circle [ID=1] with radius 2.0");
+
+        Square square3 = new Square(2, 3.0, ascii);
+        String resT7 = square3.execute();
+        boolean passT7 = resT7.equals("ASCII render of Square [ID=2] with side 3.0");
+        if (passT7) passed++;
+        printResult("T7", passT7, "Square + AsciiRenderer", resT7, "ASCII render of Square [ID=2] with side 3.0");
+
         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
     }
 
